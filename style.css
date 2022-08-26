@@ -1,0 +1,164 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    }
+    button {
+    position: relative;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: .1em;
+    padding: 10px, 30px;
+    transition: 0.5s;
+    }
+    button:hover {
+        letter-spacing: 0.25em;
+        background: var(--color-#1e9bff);
+        color: var(--color-#1e9bff);
+        box-shadow: 0 0 35px var(--color-#1e9bff);
+    }
+    button::before{
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #27282c;
+    }
+    button span{
+        position: relative;
+        z-index: 1;
+    }
+    button i{
+        position: absolute;
+        inset: 0;
+        display: block;
+    }
+    button i::before{
+        content: '';
+        position: absolute;
+        top: -3.5px;
+        left: 80%;
+        width: 5px;
+        height: 3px;
+        border: 1px solid #fff;
+        background: #27282c;
+        transform: translateX(-50%);
+        transition: 0.5s;
+    }
+    button:hover i::before{
+        width: 5px;
+        left: 20%;
+    }
+    button i::after{
+        content: '';
+        position: absolute;
+        bottom: -3.5px;
+        left: 20%;
+        width: 5px;
+        height: 3px;
+        border: 1px solid #fff;
+        background: #27282c;
+        transform: translateX(-50%);
+        transition: 0.5s;
+    }
+    button:hover i::after{
+        width: 5px;
+        left: 80%;
+    }
+    h1 {
+    position: relative;
+    font-size: 3.5em;
+    letter-spacing: 15px;
+    color: #CCAA00;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004 );
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 5s linear infinite;
+    }
+    @keyframes animate{
+        0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
+        {
+            color: #000;
+            box-shadow: none;
+        }
+        18.1%, 20.1%, 30%, 50%, 60.1%, 80.1%, 90.1%, 92.1%, 100%
+        {
+            color: #fff;
+            text-shadow: 0 0 10px #FFD500,
+            0 0 20px #FFD500,
+            0 0 40px #FFD500,
+            0 0 80px #FFD500,
+            0 0 160px #FFD500;
+        }
+    }
+    p {
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+    border-width: 75%;
+    }
+    #watchlist-bttn {
+    text-align: center;
+    }
+    h2 {
+    font-size: 1.5em;
+    font-weight: 250;
+    text-align: center;
+    text-decoration: underline;
+    color: white
+    }
+    form {
+    text-align: center;
+    }
+    input {
+    text-align: center;
+    }
+    #TvShows {
+    position: relative;
+    background: linear-gradient(0deg, #000, #be2029);
+    padding: 50px;
+    width: 70%;
+    margin: 20px auto 0;
+    text-align: center;
+    }
+    .tvShows:before, .tvShows:after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #FFD500,#fff, #CCAA00, #fff, #FFD919, #E8E8E8 );
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+    }
+    @keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 800% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.tvShows:after {
+    filter: blur(50px);
+}
+    .showPix {
+    margin: 5px;
+    cursor: pointer;
+    }
+    h3 {
+    font-weight: 100;
+    }

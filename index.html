@@ -1,54 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 1 Project</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <h1>Tv Show Search</h1>
-
-    <div id = "TvShows">
-        <!--Tv shows goes here-->
+<!--Web App Banner-->
+<h1>Show Dynamo</h1>
+<!--Intro to App/Directions-->
+<p>Use the search bar below to find the name of that TV show that's been on the tip
+of your tongue.
+<br>
+You can look it up by its complete title or even one or two keywords.
+<br>
+Don't forget to watch it later by adding it to your watchlist!
+</p>
+<br>
+<!--Search Submition-->
+<form id="searchForm">
+<input type="text"
+placeholder="Show Title or Keyword"
+onfocus="this.placeholder = ''"
+onblur="this.placeholder = 'Show Title or Keyword'"
+name="query" />
+<button class="button">
+    <span>Search</span><i></i>
+</button>
+<button class="button" id = 'remove' type="reset">
+    <span>Clear</span><i></i>
+</button>
+</form>
+<br>
+<!--Watchlist Button-->
+<div id = "watchlist-bttn">
+<button class="button" id = "open-watchlist">
+    <span>Watchlist</span><i></i>
+</button>
+</div>
+<!--Watchlist Dialog Box-->
+<dialog class = "watchList" id = "watch-list">
+<button class="button" id = "close-watchlist">
+    <span>X</span><i></i>
+</button>
+<button class="button" id = "share-bttn">
+    <span>Share</span><i></i>
+</button>
+<h2>Watchlist:</h2>
+</dialog>
+<br>
+<!--Search Results-->
+    <div id = "TvShows" class="tvShows">
+    <br class="tvResults">
+<!--Search Results Will Display Here-->
+    <br>
     </div>
-    <div id = "watchlist-bttn">
-        <button id = "open-watchlist">Watchlist</button>
-    </div>
-   <form id="searchForm">
-        <input type="text" placeholder="Tv Show Title" name = "query">
-        <button>Search</button>
-        <button id = 'remove' type="reset">Clear</button>
-    </form>
-
-   
-    <dialog  class="modal active" id = "modal">
-        <div class="modal-header">
-            <h3 id = "detail-title"></h3>
-            <button id = "close">&times;</button>
-        </div>
-        <div class="modal-body">
-            <span id = "detail-status"></span>
-            <span id = "detail-runtime"></span>
-            <p id = "detail-description"></p> 
-        </div>
-    </div>
-    <div class = "active" id = "overlay"></div>
-
-    <dialog class = "watchList" id = "watch-list">
-        <div class = "watchlist-div">
-            <h3 id = "watchlist-name"></h3>
-            <button id = "close-watchlist"></button>
-        </div>
-    </dialog>
-
-    
+<!--Search Results Dialog Box-->
+<dialog class="modal active" id = "modal">
+<div class="modal-header">
+<button class="button" id = "close"><span>&times;</span></button>
+<button class="button" id = "add-watch"><span>Add to Watchlist</span></button>
+<h3 id = "detail-title"></h3>
+</div>
+<div class="modal-body">
+<div id = "detail-status"></div>
+<br>
+<div id = "detail-runtime"></div>
+<br>
+<div id = "detail-description"></div>
+</div>
+</div>
+<div class = "active" id = "overlay"></div>
+</dialog>
 
 
-
-
-    <script src="index.js"></script>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
